@@ -1,62 +1,93 @@
 import React from 'react';
-import { Instagram, Linkedin, Twitter, Mail, Heart } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail, MapPin, Phone, Heart } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="bg-bg-dark border-t border-white/10 pt-16 pb-8">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <footer className="border-t border-white/10 pt-16 pb-8 relative overflow-hidden">
+            {/* Background elements */}
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-neon-blue to-transparent opacity-50"></div>
+            <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-neon-purple/10 rounded-full blur-[100px]"></div>
+            <div className="absolute top-20 -left-20 w-60 h-60 bg-neon-blue/5 rounded-full blur-[80px]"></div>
 
-                    {/* Brand & Socials */}
-                    <div>
-                        <h2 className="text-3xl font-orbitron font-bold text-white mb-4">
-                            ARIVOLI<span className="text-neon-purple">'26</span>
-                        </h2>
-                        <p className="text-gray-400 mb-6 font-inter">
-                            Explore the future of innovation at our National Level Technical Symposium.
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                    {/* Brand Section */}
+                    <div className="space-y-4">
+                        <div className="flex items-center">
+                            <span className="font-orbitron font-bold text-2xl tracking-wider text-white">
+                                ARIVOLI<span className="text-neon-blue">'26</span>
+                            </span>
+                        </div>
+                        <p className="text-gray-400 text-sm leading-relaxed font-inter">
+                            A National Level Technical Symposium hosted by the Department of CSE, IT, CSBS & AI&DS. Unleash your potential in the era of Artificial Intelligence.
                         </p>
-                        <div className="flex gap-4">
-                            {[Instagram, Linkedin, Twitter, Mail].map((Icon, idx) => (
-                                <a key={idx} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-neon-blue hover:text-black transition-all">
-                                    <Icon size={20} />
-                                </a>
-                            ))}
+                        <div className="flex space-x-4 pt-2">
+                            <a href="#" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-neon-blue hover:bg-white/10 transition-all duration-300 border border-transparent hover:border-neon-blue/30 shadow-sm hover:shadow-[0_0_10px_rgba(0,243,255,0.2)]"><Github size={18} /></a>
+                            <a href="#" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-neon-blue hover:bg-white/10 transition-all duration-300 border border-transparent hover:border-neon-blue/30 shadow-sm hover:shadow-[0_0_10px_rgba(0,243,255,0.2)]"><Twitter size={18} /></a>
+                            <a href="#" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-neon-blue hover:bg-white/10 transition-all duration-300 border border-transparent hover:border-neon-blue/30 shadow-sm hover:shadow-[0_0_10px_rgba(0,243,255,0.2)]"><Linkedin size={18} /></a>
                         </div>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="text-xl font-orbitron font-bold text-white mb-6">Quick Links</h3>
-                        <ul className="space-y-3 font-inter text-gray-400">
-                            <li><a href="#about" className="hover:text-neon-blue transition-colors">About Us</a></li>
-                            <li><a href="#events" className="hover:text-neon-blue transition-colors">Events</a></li>
-                            <li><a href="#register" className="hover:text-neon-blue transition-colors">Registration</a></li>
-                            <li><a href="/rulebook.pdf" className="hover:text-neon-blue transition-colors">Rulebook</a></li>
+                        <h3 className="text-lg font-orbitron font-bold text-white mb-6 border-l-4 border-neon-blue pl-3">Quick Links</h3>
+                        <ul className="space-y-3">
+                            {['Home', 'About Event', 'Waitlist', 'Sponsorship', 'Contact Us'].map((item) => (
+                                <li key={item}>
+                                    <a href="#" className="text-gray-400 hover:text-neon-blue transition-colors duration-300 flex items-center group font-inter text-sm">
+                                        <span className="w-1.5 h-1.5 bg-neon-blue rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                                        {item}
+                                    </a>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
-                    {/* Location */}
+                    {/* Events */}
                     <div>
-                        <h3 className="text-xl font-orbitron font-bold text-white mb-6">Locate Us</h3>
-                        <div className="rounded-xl overflow-hidden shadow-lg border border-white/10 h-48 w-full">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.689617835848!2d77.9620073153676!3d11.56536699178923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babe461e737194d%3A0x6b772023023e61c6!2sKnowledge%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1625123456789!5m2!1sen!2sin"
-                                width="100%"
-                                height="100%"
-                                style={{ border: 0 }}
-                                allowFullScreen=""
-                                loading="lazy"
-                            ></iframe>
-                        </div>
+                        <h3 className="text-lg font-orbitron font-bold text-white mb-6 border-l-4 border-neon-purple pl-3">Events</h3>
+                        <ul className="space-y-3">
+                            {['Paper Presentation', 'Project Expo', 'Code Debugging', 'Technical Quiz', 'Gaming'].map((item) => (
+                                <li key={item}>
+                                    <a href="#" className="text-gray-400 hover:text-neon-purple transition-colors duration-300 flex items-center group font-inter text-sm">
+                                        <span className="w-1.5 h-1.5 bg-neon-purple rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                                        {item}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Contact Info */}
+                    <div>
+                        <h3 className="text-lg font-orbitron font-bold text-white mb-6 border-l-4 border-neon-blue pl-3">Contact Us</h3>
+                        <ul className="space-y-4">
+                            <li className="flex items-start">
+                                <MapPin className="text-neon-blue w-5 h-5 mt-0.5 mr-3 flex-shrink-0" />
+                                <span className="text-gray-400 text-sm font-inter">
+                                    Knowledge Institute of Technology,<br />
+                                    Kakapalayam (PO), Salem - 637 504.
+                                </span>
+                            </li>
+                            <li className="flex items-center">
+                                <Phone className="text-neon-blue w-5 h-5 mr-3 flex-shrink-0" />
+                                <span className="text-gray-400 text-sm font-inter">+91 98765 43210</span>
+                            </li>
+                            <li className="flex items-center">
+                                <Mail className="text-neon-blue w-5 h-5 mr-3 flex-shrink-0" />
+                                <span className="text-gray-400 text-sm font-inter">arivolisymposium@kiot.ac.in</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                <div className="border-t border-white/5 pt-8 text-center text-gray-500 font-inter text-sm">
-                    <p className="mb-2">© ARIVOLI'26. All Rights Reserved.</p>
-                    <p className="flex items-center justify-center gap-1">
-                        Made with <Heart size={14} className="text-red-500 fill-red-500" /> by <span className="text-neon-blue">KIOT Tech Team</span>
+                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p className="text-gray-500 text-sm mb-4 md:mb-0 font-inter">
+                        © 2026 ARIVOLI. All rights reserved.
                     </p>
-                    <p className="mt-4 text-xs italic opacity-50">"All event themes are mentioned in the rulebook"</p>
+                    <div className="flex items-center text-sm text-gray-500 font-inter">
+                        <span>Designed with <Heart className="inline w-4 h-4 text-neon-pink mx-1 animate-pulse" /> by Dept of IT</span>
+                    </div>
                 </div>
             </div>
         </footer>

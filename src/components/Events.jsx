@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Code2, Terminal, PenTool, Database, Cpu, Gamepad2, Mic2, Zap, Award, Puzzle, X, CheckCircle, Smartphone, User, Phone } from 'lucide-react';
+import { Code2, Terminal, PenTool, Database, Cpu, Gamepad2, Mic2, Zap, Award, Puzzle, X, CheckCircle, User, Phone, Brain, CircuitBoard, Trophy, Layers } from 'lucide-react';
+import SectionWrapper from './SectionWrapper';
 
 const Events = () => {
     const [activeTab, setActiveTab] = useState('technical');
@@ -8,10 +9,89 @@ const Events = () => {
 
     const events = {
         technical: [
-            { title: "Project Expo", desc: "Showcase your innovations", icon: Cpu },
-            { title: "Error 404", desc: "Capture The Flag (CTF)", icon: Terminal },
-            { title: "Coding Maniac", desc: "Competitive Coding", icon: Code2 },
-            { title: "Paper Presentation", desc: "Share your research", icon: PenTool },
+            {
+                title: "Project Expo",
+                desc: "Showcase your innovations",
+                icon: Cpu,
+                details: {
+                    description: "A platform for young minds to showcase their innovative projects. Bring your prototypes and ideas to life.",
+                    image: "/project-expo.jpg",
+                    rules: { "Guidelines": ["Max team size: 4", "Working prototype required", "Abstract submission mandatory"] },
+                    coordinators: [{ name: "Student Coord 1", phone: "9876543210" }]
+                }
+            },
+            {
+                title: "Error 404",
+                desc: "Capture The Flag (CTF)",
+                icon: Terminal,
+                details: {
+                    description: "ERROR 404 is a Capture The Flag (CTF) event that tests participants’ cybersecurity, logical thinking, and problem-solving skills through security-based challenges.",
+                    rules: {
+                        "Rules & Regulations": [
+                            "CTF-based competition",
+                            "Challenges include Web, Crypto, Forensics, OSINT, and Security",
+                            "Individual or team participation",
+                            "No flag sharing or external help",
+                            "No unfair methods or platform attacks",
+                            "Points for correct submissions",
+                            "Cheating leads to disqualification",
+                            "Organizers’ decision is final"
+                        ]
+                    },
+                    coordinators: [
+                        { name: "Student Coordinator", phone: "To Be Announced" }
+                    ]
+                }
+            },
+            {
+                title: "Coding Maniac",
+                desc: "Competitive Coding",
+                icon: Code2,
+                details: {
+                    description: "Coding Maniac is a competitive coding event that tests participants’ programming skills, logical thinking, and problem-solving abilities through MCQ, debugging, and coding challenges.",
+                    rules: {
+                        "Guidelines": [
+                            "Two rounds: MCQ & Debugging, and Coding",
+                            "Only shortlisted candidates move to Round 2",
+                            "Languages allowed: C, Java, Python",
+                            "No negative or partial marking",
+                            "No malpractice allowed",
+                            "Duration: 2 hours"
+                        ],
+                        "Note": ["Top performers will be awarded"]
+                    },
+                    coordinators: [
+                        { name: "Pragadeeshwaran R", phone: "+91 73395 83589" },
+                        { name: "Kaviya GS", phone: "+91 98946 53709" },
+                        { name: "Ramkumar R", phone: "+91 63804 45757" },
+                        { name: "Priyadharshini S", phone: "+91 63817 28415" }
+                    ]
+                }
+            },
+            {
+                title: "Next Gen Talks",
+                desc: "Technical Paper Presentation",
+                icon: PenTool,
+                details: {
+                    description: "Next Gen Talks is a technical paper presentation event focused on Artificial Intelligence and Data Science. It provides a platform for students to present innovative ideas and emerging technologies.",
+                    rules: {
+                        "Rules Overview": [
+                            "Team size: 3–4 members",
+                            "Presentation time: 5–7 minutes",
+                            "Q&A: 2 minutes",
+                            "Theme: AI & Data Science",
+                            "Format: PPT presentation",
+                            "Maximum slides: 8",
+                            "Evaluation: Innovation, technical depth, clarity, presentation skills"
+                        ]
+                    },
+                    coordinators: [
+                        { name: "Padma Sree R", phone: "86681 67630" },
+                        { name: "Umamaheswari A", phone: "78240 47887" },
+                        { name: "Sabitha DR", phone: "93600 31427" }
+                    ]
+                }
+            },
         ],
         workshops: [
             {
@@ -50,7 +130,7 @@ const Events = () => {
                     ]
                 }
             },
-            { title: "LLM Chatbot", desc: "Build AI Models", icon: Cpu },
+            { title: "LLM Chatbot", desc: "Build AI Models", icon: Brain },
             { title: "AI Tools", desc: "Prompt Engineering", icon: Zap },
         ],
         nonTechnical: [
@@ -112,67 +192,66 @@ const Events = () => {
     };
 
     return (
-        <section id="events" className="py-20 bg-black relative">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold font-orbitron mb-4">EVENT <span className="text-neon-pink">DOMAINS</span></h2>
-                    <div className="w-20 h-1 bg-gradient-to-r from-neon-pink to-neon-purple mx-auto"></div>
-                </div>
+        <SectionWrapper id="events">
+            <div className="text-center mb-16">
+                <h2 className="text-3xl sm:text-5xl font-bold font-orbitron mb-4">
+                    EVENT <span className="text-neon-pink">DOMAINS</span>
+                </h2>
+                <div className="w-24 h-1 bg-gradient-to-r from-neon-pink to-neon-purple mx-auto rounded-full"></div>
+            </div>
 
-                <div className="flex justify-center mb-12 flex-wrap gap-4">
-                    {[
-                        { id: 'technical', label: 'Technical' },
-                        { id: 'workshops', label: 'Workshops' },
-                        { id: 'nonTechnical', label: 'Non-Technical' }
-                    ].map((tab) => (
-                        <button
-                            key={tab.id}
-                            onClick={() => setActiveTab(tab.id)}
-                            className={`px-8 py-3 rounded-full font-orbitron font-bold transition-all ${activeTab === tab.id
-                                ? 'bg-neon-blue text-black shadow-[0_0_20px_rgba(0,243,255,0.4)]'
-                                : 'bg-white/5 text-gray-400 hover:text-white border border-white/10'
-                                }`}
-                        >
-                            {tab.label}
-                        </button>
-                    ))}
-                </div>
+            <div className="flex justify-center mb-12 flex-wrap gap-4">
+                {[
+                    { id: 'technical', label: 'Technical', icon: CircuitBoard },
+                    { id: 'workshops', label: 'Workshops', icon: Layers },
+                    { id: 'nonTechnical', label: 'Non-Technical', icon: Trophy }
+                ].map((tab) => (
+                    <button
+                        key={tab.id}
+                        onClick={() => setActiveTab(tab.id)}
+                        className={`px-6 py-3 rounded-full font-orbitron font-bold transition-all flex items-center gap-2 ${activeTab === tab.id
+                            ? 'bg-neon-blue text-black shadow-[0_0_20px_rgba(0,243,255,0.4)] transform scale-105'
+                            : 'bg-white/5 text-gray-400 hover:text-white border border-white/10 hover:border-neon-blue/50'
+                            }`}
+                    >
+                        <tab.icon size={18} />
+                        {tab.label}
+                    </button>
+                ))}
+            </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {events[activeTab]?.map((event, index) => (
-                        <motion.div
-                            key={index}
-                            layout
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.9 }}
-                            transition={{ duration: 0.3 }}
-                            className="glass-card p-6 group hover:border-neon-blue/50 transition-colors relative overflow-hidden"
-                        >
-                            <div className="absolute top-0 right-0 w-20 h-20 bg-neon-blue/10 rounded-full blur-xl -mr-10 -mt-10 group-hover:bg-neon-blue/20 transition-all"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {events[activeTab]?.map((event, index) => (
+                    <motion.div
+                        key={index}
+                        layout
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        transition={{ duration: 0.3 }}
+                        onClick={() => setSelectedEvent(event)}
+                        className="glass-card p-6 group hover:border-neon-blue/50 transition-colors relative overflow-hidden cursor-pointer"
+                    >
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-neon-blue/5 rounded-full blur-2xl -mr-16 -mt-16 group-hover:bg-neon-blue/10 transition-all"></div>
 
-                            <div className="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center mb-4 text-neon-blue group-hover:scale-110 transition-transform">
-                                <event.icon size={24} />
-                            </div>
+                        <div className="w-14 h-14 bg-white/5 rounded-xl flex items-center justify-center mb-6 text-neon-blue group-hover:scale-110 group-hover:bg-neon-blue group-hover:text-black transition-all duration-300">
+                            <event.icon size={28} />
+                        </div>
 
-                            <h3 className="text-xl font-bold font-orbitron text-white mb-2 group-hover:text-neon-blue transition-colors">{event.title}</h3>
-                            <p className="text-gray-400 text-sm mb-4 font-inter">{event.desc}</p>
+                        <h3 className="text-xl font-bold font-orbitron text-white mb-2 group-hover:text-neon-blue transition-colors">{event.title}</h3>
+                        <p className="text-gray-400 text-sm mb-6 font-inter leading-relaxed">{event.desc}</p>
 
-                            <button
-                                onClick={() => setSelectedEvent(event)}
-                                className="text-sm text-neon-blue hover:text-white font-bold transition-colors flex items-center gap-1 cursor-pointer"
-                            >
-                                View Rules &rarr;
-                            </button>
-                        </motion.div>
-                    ))}
-                </div>
+                        <div className="flex items-center text-sm text-neon-blue font-bold tracking-wide uppercase opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
+                            View Details &rarr;
+                        </div>
+                    </motion.div>
+                ))}
             </div>
 
             {/* Event Details Modal */}
             <AnimatePresence>
                 {selectedEvent && (
-                    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6">
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -182,43 +261,46 @@ const Events = () => {
                         ></motion.div>
 
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                            initial={{ opacity: 0, scale: 0.9, y: 50 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                            className="bg-bg-card border border-neon-blue/30 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative z-10 shadow-[0_0_50px_rgba(0,243,255,0.15)] flex flex-col md:flex-row"
+                            exit={{ opacity: 0, scale: 0.9, y: 50 }}
+                            className="bg-bg-dark border border-neon-blue/30 rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden relative z-10 shadow-[0_0_50px_rgba(0,243,255,0.15)] flex flex-col md:flex-row"
                         >
                             <button
                                 onClick={() => setSelectedEvent(null)}
-                                className="absolute top-4 right-4 p-2 bg-black/50 rounded-full text-gray-400 hover:text-white hover:bg-red-500/20 transition-all z-20"
+                                className="absolute top-4 right-4 p-2 bg-black/50 rounded-full text-gray-400 hover:text-white hover:bg-red-500/20 transition-all z-50"
                             >
                                 <X size={24} />
                             </button>
 
-                            {/* Image Section */}
-                            <div className="w-full md:w-2/5 relative min-h-[200px] md:min-h-full">
+                            {/* Image/Icon Section */}
+                            <div className="w-full md:w-2/5 relative h-48 md:h-auto bg-black flex items-center justify-center overflow-hidden">
                                 {selectedEvent.details?.image ? (
-                                    <img
-                                        src={selectedEvent.details.image}
-                                        alt={selectedEvent.title}
-                                        className="w-full h-full object-cover"
-                                    />
+                                    <div className="w-full h-full relative">
+                                        <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-transparent z-10"></div>
+                                        <img
+                                            src={selectedEvent.details.image}
+                                            alt={selectedEvent.title}
+                                            className="w-full h-full object-cover opacity-80"
+                                        />
+                                    </div>
                                 ) : (
-                                    <div className="w-full h-full bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
-                                        <selectedEvent.icon size={64} className="text-neon-blue opacity-50" />
+                                    <div className="w-full h-full relative overflow-hidden flex items-center justify-center bg-grid-pattern">
+                                        <div className="absolute inset-0 bg-neon-blue/5"></div>
+                                        <selectedEvent.icon size={120} className="text-neon-blue opacity-20 animate-pulse" />
                                     </div>
                                 )}
-                                <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent md:bg-gradient-to-r"></div>
                             </div>
 
                             {/* Content Section */}
-                            <div className="w-full md:w-3/5 p-6 md:p-8">
-                                <h3 className="text-3xl font-bold font-orbitron text-white mb-2">{selectedEvent.title}</h3>
-                                <p className="text-neon-blue font-orbitron text-sm mb-6 uppercase tracking-wider">{selectedEvent.desc}</p>
+                            <div className="w-full md:w-3/5 p-6 md:p-10 overflow-y-auto custom-scrollbar bg-bg-dark">
+                                <h3 className="text-3xl md:text-4xl font-bold font-orbitron text-white mb-2">{selectedEvent.title}</h3>
+                                <p className="text-neon-blue font-orbitron text-sm mb-8 uppercase tracking-wider font-bold">{selectedEvent.desc}</p>
 
                                 {selectedEvent.details ? (
                                     <div className="space-y-8">
                                         <div>
-                                            <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2">
+                                            <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
                                                 <Zap size={18} className="text-yellow-400" /> Description
                                             </h4>
                                             <p className="text-gray-300 text-sm leading-relaxed font-inter">
@@ -228,13 +310,13 @@ const Events = () => {
 
                                         {selectedEvent.details.rules && Object.entries(selectedEvent.details.rules).map(([category, items]) => (
                                             <div key={category}>
-                                                <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2">
+                                                <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
                                                     <CheckCircle size={18} className="text-neon-green" /> {category}
                                                 </h4>
                                                 <ul className="space-y-2">
                                                     {items.map((rule, idx) => (
-                                                        <li key={idx} className="flex gap-2 text-sm text-gray-400 font-inter">
-                                                            <span className="text-neon-blue mt-1">•</span>
+                                                        <li key={idx} className="flex gap-3 text-sm text-gray-400 font-inter">
+                                                            <span className="text-neon-blue mt-1.5 w-1.5 h-1.5 rounded-full bg-neon-blue flex-shrink-0"></span>
                                                             <span>{rule}</span>
                                                         </li>
                                                     ))}
@@ -244,12 +326,12 @@ const Events = () => {
 
                                         {selectedEvent.details.coordinators && (
                                             <div>
-                                                <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2">
+                                                <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
                                                     <User size={18} className="text-neon-purple" /> Event Coordinators
                                                 </h4>
                                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                                     {selectedEvent.details.coordinators.map((coord, idx) => (
-                                                        <div key={idx} className="bg-white/5 p-3 rounded-lg flex items-center gap-3 border border-white/5">
+                                                        <div key={idx} className="bg-white/5 p-4 rounded-xl flex items-center gap-4 border border-white/5 hover:border-white/20 transition-all">
                                                             <div className="w-10 h-10 rounded-full bg-neon-purple/20 flex items-center justify-center text-neon-purple">
                                                                 <Phone size={18} />
                                                             </div>
@@ -267,14 +349,17 @@ const Events = () => {
                                             href="https://docs.google.com/forms/d/1uVXQ8OrqTb2NiLTs8TKddSBBWQ3hhzsbGh1hUJIRwPQ/viewform"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="block w-full py-4 text-center bg-gradient-to-r from-neon-blue to-neon-purple text-white font-bold font-orbitron rounded-lg hover:shadow-[0_0_20px_rgba(0,243,255,0.5)] transition-all transform hover:-translate-y-1 mt-8"
+                                            className="block w-full py-4 text-center bg-neon-blue hover:bg-white text-black font-bold font-orbitron rounded-xl hover:shadow-[0_0_30px_rgba(0,243,255,0.4)] transition-all transform hover:-translate-y-1 mt-8 uppercase tracking-widest"
                                         >
-                                            REGISTER FOR EVENT
+                                            Register for Event
                                         </a>
                                     </div>
                                 ) : (
-                                    <div className="text-center py-12">
-                                        <p className="text-gray-500 italic">Detailed information for this event will be updated soon.</p>
+                                    <div className="text-center py-12 border border-dashed border-white/20 rounded-xl">
+                                        <p className="text-gray-500 italic mb-4">Detailed information for this event will be updated soon.</p>
+                                        <button className="px-6 py-2 border border-neon-blue text-neon-blue rounded-full hover:bg-neon-blue hover:text-black transition-colors font-bold font-orbitron text-sm">
+                                            Notify Me
+                                        </button>
                                     </div>
                                 )}
                             </div>
@@ -282,7 +367,7 @@ const Events = () => {
                     </div>
                 )}
             </AnimatePresence>
-        </section>
+        </SectionWrapper>
     );
 };
 
