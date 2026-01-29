@@ -57,7 +57,9 @@ const Events = () => {
                         { name: "Mohamed Jalaludeen", phone: "95668 93337" },
                         { name: "Vignesh T", phone: "80159 78929" },
                         { name: "Jaishree M", phone: "93447 21040" },
-                        { name: "Sugantha A", phone: "81485 31845" }
+                        { name: "Sugantha A", phone: "81485 31845" },
+                        { name: "Vikranth v", phone: "95009 51199" },
+                        { name: "Sudheksha S", phone: "63694 50687" }
                     ]
                 }
             },
@@ -83,7 +85,9 @@ const Events = () => {
                         { name: "Pragadeeshwaran R", phone: "+91 73395 83589" },
                         { name: "Kaviya GS", phone: "+91 98946 53709" },
                         { name: "Ramkumar R", phone: "+91 63804 45757" },
-                        { name: "Priyadharshini S", phone: "+91 63817 28415" }
+                        { name: "Priyadharshini S", phone: "+91 63817 28415" },
+                        { name: "Harshanth V", phone: "+91 84383 86610" },
+                        { name: "Karthiga sree Suresh", phone: "+91 90805 58409" }
                     ]
                 }
             },
@@ -245,7 +249,9 @@ const Events = () => {
                         { name: "Manjusri S", phone: "90430 38932" },
                         { name: "Lalith Sanjaai S", phone: "93621 19144" },
                         { name: "Anitha S", phone: "75503 71716" },
-                        { name: "Kamaraj D", phone: "96290 84306" }
+                        { name: "Kamaraj D", phone: "96290 84306" },
+                        { name: "Surya Karthikeyan V S", phone: "90436 47016" },
+                        { name: "Miruthula", phone: "90952 94181" }
                     ]
                 }
             },
