@@ -19,7 +19,7 @@ const Footer = () => {
                             </span>
                         </div>
                         <p className="text-gray-400 text-sm leading-relaxed font-inter">
-                            A National Level Technical Symposium hosted by the Department of CSE, IT, CSBS & AI&DS. Unleash your potential in the era of Artificial Intelligence.
+                            A National Level Technical Symposium hosted by the Department of CSE, IT, CSBS & AI&DS. Unleash your potential in the era of Technical World.
                         </p>
                         <div className="flex space-x-4 pt-2 justify-center md:justify-start">
                             <a

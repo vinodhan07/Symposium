@@ -90,7 +90,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
-                        className="mt-4 sm:mt-6 text-sm sm:text-lg md:text-xl lg:text-2xl font-orbitron font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-blue tracking-[0.2em] sm:tracking-[0.3em] text-center whitespace-nowrap px-4"
+                        className="mt-4 sm:mt-6 text-xs sm:text-base md:text-lg lg:text-xl font-orbitron font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-blue tracking-[0.15em] sm:tracking-[0.2em] text-center px-4 max-w-4xl mx-auto"
                         style={{ textShadow: '0 0 10px rgba(0, 243, 255, 0.3)' }}
                     >
                         NATIONAL LEVEL TECHNICAL SYMPOSIUM

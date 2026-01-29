@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Code2, Terminal, PenTool, Database, Cpu, Gamepad2, Mic2, Zap, Award, Puzzle, X, CheckCircle, User, Phone, Brain, CircuitBoard, Trophy, Layers } from 'lucide-react';
+import { Code2, Terminal, PenTool, Database, Cpu, Gamepad2, Mic2, Zap, Award, Puzzle, X, CheckCircle, User, Phone, Brain, CircuitBoard, Trophy, Layers, FileText } from 'lucide-react';
 import SectionWrapper from './SectionWrapper';
 
 const Events = () => {
@@ -462,14 +462,25 @@ const Events = () => {
                                             </div>
                                         )}
 
-                                        <a
-                                            href="https://docs.google.com/forms/d/e/1FAIpQLSdA9IrRGBZuqQe8oioE-fbSp9CK9H4hYyGi_2HjGw0d2VenEA/viewform?usp=header"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="block w-full py-4 text-center bg-neon-blue hover:bg-white text-black font-bold font-orbitron rounded-xl hover:shadow-[0_0_30px_rgba(0,243,255,0.4)] transition-all transform hover:-translate-y-1 mt-8 uppercase tracking-widest"
-                                        >
-                                            Register for Event
-                                        </a>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                                            <a
+                                                href="/rulebook.pdf"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center justify-center gap-2 w-full py-4 text-center bg-white/5 border-2 border-neon-purple hover:bg-neon-purple/10 text-neon-purple font-bold font-orbitron rounded-xl hover:shadow-[0_0_30px_rgba(188,19,254,0.3)] transition-all transform hover:-translate-y-1 uppercase tracking-widest"
+                                            >
+                                                <FileText size={20} />
+                                                Open Rule Book
+                                            </a>
+                                            <a
+                                                href="https://docs.google.com/forms/d/e/1FAIpQLSdA9IrRGBZuqQe8oioE-fbSp9CK9H4hYyGi_2HjGw0d2VenEA/viewform?usp=header"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="w-full py-4 text-center bg-neon-blue hover:bg-white text-black font-bold font-orbitron rounded-xl hover:shadow-[0_0_30px_rgba(0,243,255,0.4)] transition-all transform hover:-translate-y-1 uppercase tracking-widest"
+                                            >
+                                                Register for Event
+                                            </a>
+                                        </div>
                                     </div>
                                 ) : (
                                     <div className="text-center py-12 border border-dashed border-white/20 rounded-xl">
