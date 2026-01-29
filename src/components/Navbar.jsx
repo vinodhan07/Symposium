@@ -42,7 +42,7 @@ const Navbar = () => {
                                 className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
                             />
                         </div>
-                        <span className="font-orbitron font-bold text-[10px] sm:text-sm md:text-base tracking-widest text-white group-hover:text-neon-blue transition-colors duration-300 uppercase whitespace-nowrap">
+                        <span className="font-orbitron font-bold text-[8px] xs:text-[10px] sm:text-sm md:text-base tracking-widest text-white group-hover:text-neon-blue transition-colors duration-300 uppercase whitespace-nowrap">
                             Knowledge Institute Of Technology
                         </span>
                     </div>
@@ -62,7 +62,9 @@ const Navbar = () => {
                                 </a>
                             ))}
                             <a
-                                href="#register"
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSdA9IrRGBZuqQe8oioE-fbSp9CK9H4hYyGi_2HjGw0d2VenEA/viewform?usp=header"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="ml-4 px-6 py-2 bg-transparent border border-neon-blue text-neon-blue hover:bg-neon-blue hover:text-black font-orbitron font-bold rounded-lg transition-all duration-300 shadow-[0_0_10px_rgba(0,243,255,0.2)] hover:shadow-[0_0_20px_rgba(0,243,255,0.6)]"
                             >
                                 REGISTER
@@ -103,7 +105,9 @@ const Navbar = () => {
                                 </a>
                             ))}
                             <a
-                                href="#register"
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSdA9IrRGBZuqQe8oioE-fbSp9CK9H4hYyGi_2HjGw0d2VenEA/viewform?usp=header"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 onClick={() => setIsOpen(false)}
                                 className="block w-full text-center mt-4 px-6 py-3 bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 border border-neon-blue/50 text-white font-orbitron font-bold rounded-lg shadow-[0_0_15px_rgba(0,243,255,0.1)]"
                             >

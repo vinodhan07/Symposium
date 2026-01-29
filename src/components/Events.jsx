@@ -14,10 +14,23 @@ const Events = () => {
                 desc: "Showcase your innovations",
                 icon: Cpu,
                 details: {
-                    description: "A platform for young minds to showcase their innovative projects. Bring your prototypes and ideas to life.",
+                    description: "Showcase innovative student projects aligned with UN SDGs, focusing on real-world solutions, creativity, and sustainability.",
                     image: "/project-expo.jpg",
-                    rules: { "Guidelines": ["Max team size: 4", "Working prototype required", "Abstract submission mandatory"] },
-                    coordinators: [{ name: "Student Coord 1", phone: "9876543210" }]
+                    rules: {
+                        "Key Rules": [
+                            "Team: 2–4 members | Max 60 teams",
+                            "Bring laptop & college ID",
+                            "Project must be working & demonstrable",
+                            "One-page write-up mandatory",
+                            "Certificates for physical participation only",
+                            "Follow allotted time slot",
+                            "Decision of organizers is final"
+                        ]
+                    },
+                    coordinators: [
+                        { name: "Gowri R", phone: "90258 28286" },
+                        { name: "Nishanth M", phone: "93457 87079" }
+                    ]
                 }
             },
             {
@@ -39,7 +52,10 @@ const Events = () => {
                         ]
                     },
                     coordinators: [
-                        { name: "Student Coordinator", phone: "To Be Announced" }
+                        { name: "Mohamed Jalaludeen", phone: "95668 93337" },
+                        { name: "Vignesh T", phone: "80159 78929" },
+                        { name: "Jaishree M", phone: "93447 21040" },
+                        { name: "Sugantha A", phone: "81485 31845" }
                     ]
                 }
             },
@@ -73,16 +89,14 @@ const Events = () => {
                 desc: "Technical Paper Presentation",
                 icon: PenTool,
                 details: {
-                    description: "Next Gen Talks is a technical paper presentation event focused on Artificial Intelligence and Data Science. It provides a platform for students to present innovative ideas and emerging technologies.",
+                    description: "Present innovative ideas and research in AI & Data Science, focusing on next-generation technologies.",
                     rules: {
-                        "Rules Overview": [
-                            "Team size: 3–4 members",
-                            "Presentation time: 5–7 minutes",
-                            "Q&A: 2 minutes",
+                        "Quick Rules": [
+                            "Team: 3–4 members",
+                            "Time: 5–7 min presentation + 2 min Q&A",
+                            "Format: PPT (Max 8 slides)",
                             "Theme: AI & Data Science",
-                            "Format: PPT presentation",
-                            "Maximum slides: 8",
-                            "Evaluation: Innovation, technical depth, clarity, presentation skills"
+                            "Evaluation: Innovation, technical depth & clarity"
                         ]
                     },
                     coordinators: [
@@ -130,8 +144,54 @@ const Events = () => {
                     ]
                 }
             },
-            { title: "LLM Chatbot", desc: "Build AI Models", icon: Brain },
-            { title: "AI Tools", desc: "Prompt Engineering", icon: Zap },
+            {
+                title: "LLM Powered AI Chatbot",
+                desc: "LLM Powered AI Chatbot",
+                icon: Brain,
+                details: {
+                    description: "Hands-on workshop on building LLM-based chatbots, covering prompt design, backend integration, and cloud deployment using real-world architectures.",
+                    rules: {
+                        "Key Rules": [
+                            "Pre-registration mandatory (only this workshop)",
+                            "Full attendance required for certification",
+                            "No late entry",
+                            "Bring laptop + stable internet",
+                            "Maintain discipline & decorum",
+                            "Organizers’ decision is final"
+                        ]
+                    },
+                    coordinators: [
+                        { name: "Rajvenkadam S", phone: "96297 98166" },
+                        { name: "Tamil Selvan", phone: "80564 67991" },
+                        { name: "Preethi S", phone: "63817 28415" },
+                        { name: "Yuvasri.G", phone: "99522 48022" }
+                    ]
+                }
+            },
+            {
+                title: "AI Tools & Prompt Engineering",
+                desc: "AI Tools & Prompt Engineering",
+                icon: Zap,
+                details: {
+                    description: "An interactive workshop introducing AI concepts, tools, chatbots, and prompt engineering through real-world examples and hands-on learning. No prior experience required.",
+                    resourcePerson: "VijayaKumar Manickavasagam, Technology Analyst, Infosys",
+                    rules: {
+                        "Key Details": [
+                            "Max participants: 75",
+                            "Registration & attendance mandatory",
+                            "Certificates for attendees only",
+                            "Bring college ID & laptop",
+                            "Lunch provided",
+                            "No participation in other events",
+                            "Maintain proper decorum"
+                        ]
+                    },
+                    coordinators: [
+                        { name: "Dinesh S J", phone: "63836 43002" },
+                        { name: "Kowsika", phone: "81228 70034" }
+                    ]
+                }
+            },
         ],
         nonTechnical: [
             {
@@ -139,23 +199,16 @@ const Events = () => {
                 desc: "Build your dream team",
                 icon: Award,
                 details: {
-                    description: "Experience the excitement of an IPL auction! 🏏🔥 IPL Auction lets you build your dream team using strategy, smart bidding, and quick decisions. Test your cricket knowledge, budget management, and auction skills in this fun and competitive event. Simple to play, thrilling to compete and a must for every cricket fan!",
+                    description: "Experience the thrill of an IPL-style auction! Build your dream team using smart bidding, strategy, and cricket knowledge.",
                     image: "/ipl-auction.jpg",
                     rules: {
-                        "Rules & Regulations": [
-                            "Participants must follow the instructions given before each round.",
-                            "Each team will be given a fixed virtual budget.",
-                            "Players must be bought only through bidding (highest bid wins).",
-                            "A team must follow minimum and maximum player limits.",
-                            "Budget once spent cannot be exceeded.",
-                            "No external help or discussion during the auction.",
-                            "Decisions must be made within the given time limit.",
-                            "Fair play is mandatory; misconduct leads to disqualification.",
-                            "Winners will be decided based on team balance, budget usage, and performance criteria.",
-                            "Judges’ decision will be final."
-                        ],
-                        "Important Note": [
-                            "🚨Decisions are subject to change based on event requirements.🚨"
+                        "Quick Rules": [
+                            "Fixed virtual budget per team",
+                            "Players bought via bidding only",
+                            "Follow player limits & time slots",
+                            "No external help; fair play mandatory",
+                            "Judged on team balance & budget usage",
+                            "Judges’ decision is final"
                         ]
                     },
                     coordinators: [
@@ -164,22 +217,67 @@ const Events = () => {
                     ]
                 }
             },
-            { title: "Ad Mad", desc: "Marketing Madness", icon: Mic2 },
-            { title: "Minute to Win It", desc: "Fun Challenges", icon: Gamepad2 },
+            {
+                title: "Ad Mad",
+                desc: "Marketing Madness",
+                icon: Mic2,
+                details: {
+                    description: "A fun non-technical event where participants create and perform a short, original advertisement for a given product, testing creativity, communication, and confidence.",
+                    rules: {
+                        "Quick Rules": [
+                            "Individual or 2-member teams",
+                            "On-spot product will be given",
+                            "Limited prep & performance time",
+                            "Original ads only (name, slogan & features)",
+                            "Acting encouraged; no mobiles/internet",
+                            "Judged on creativity & presentation",
+                            "Judges’ decision is final"
+                        ]
+                    },
+                    coordinators: [
+                        { name: "Manjusri S", phone: "90430 38932" },
+                        { name: "Lalith Sanjaai S", phone: "93621 19144" },
+                        { name: "Anitha S", phone: "75503 71716" },
+                        { name: "Kamaraj D", phone: "96290 84306" }
+                    ]
+                }
+            },
+            {
+                title: "Minute to Win It",
+                desc: "Fun Challenges",
+                icon: Gamepad2,
+                details: {
+                    description: "A fast-paced event where participants complete fun challenges in under 60 seconds, testing speed, skill, and creativity.",
+                    rules: {
+                        "Quick Rules": [
+                            "60 seconds per game",
+                            "Play solo (or 2-member teams for select games)",
+                            "Use only provided objects",
+                            "Restart if items fall or break",
+                            "Task must be fully completed to win",
+                            "Games assigned on the spot"
+                        ]
+                    },
+                    coordinators: [
+                        { name: "Bharath Kumar S.M", phone: "90251 73586" },
+                        { name: "Hrishi A", phone: "93603 58658" }
+                    ]
+                }
+            },
             {
                 title: "Mind Puzzle",
                 desc: "Brain Teasers",
                 icon: Puzzle,
                 details: {
-                    description: "Get ready to twist your brain and tickle your thoughts! 🧠✨ This puzzle game is packed with clever challenges that test your logic, boost your creativity, and keep you smiling while you think. Each level is a new surprise—easy to start, tricky to master, and super fun to solve. Perfect for players who love thinking smart and playing hard!",
+                    description: "A fun puzzle challenge that tests logic, creativity, and thinking speed through smart and tricky tasks.",
                     image: "/mind-puzzle.jpg",
                     rules: {
-                        "Rules": [
-                            "Eyes must remain open – closing eyes is not allowed.",
-                            "No help from friends during the game.",
-                            "Winners will be decided based on the best completion time.",
-                            "Do not push or disturb other players.",
-                            "Judges’ decision will be final."
+                        "Quick Rules": [
+                            "Eyes open at all times",
+                            "No external help",
+                            "Winners decided by fastest completion",
+                            "Maintain discipline & fair play",
+                            "Judges’ decision is final"
                         ]
                     },
                     coordinators: [
@@ -195,7 +293,7 @@ const Events = () => {
         <SectionWrapper id="events">
             <div className="text-center mb-16">
                 <h2 className="text-3xl sm:text-5xl font-bold font-orbitron mb-4">
-                    EVENT <span className="text-neon-pink">DOMAINS</span>
+                    EVENTS
                 </h2>
                 <div className="w-24 h-1 bg-gradient-to-r from-neon-pink to-neon-purple mx-auto rounded-full"></div>
             </div>
@@ -220,7 +318,7 @@ const Events = () => {
                 ))}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {events[activeTab]?.map((event, index) => (
                     <motion.div
                         key={index}
@@ -308,6 +406,18 @@ const Events = () => {
                                             </p>
                                         </div>
 
+                                        {selectedEvent.details.resourcePerson && (
+                                            <div>
+                                                <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
+                                                    <User size={18} className="text-neon-blue" /> Resource Person
+                                                </h4>
+                                                <div className="bg-white/5 p-4 rounded-xl border border-white/5 hover:border-neon-blue/30 transition-all group/rp">
+                                                    <p className="text-white font-bold font-orbitron">{selectedEvent.details.resourcePerson.split(',')[0].trim()}</p>
+                                                    <p className="text-gray-400 text-xs mt-1 font-inter">{selectedEvent.details.resourcePerson.split(',').slice(1).join(',').trim()}</p>
+                                                </div>
+                                            </div>
+                                        )}
+
                                         {selectedEvent.details.rules && Object.entries(selectedEvent.details.rules).map(([category, items]) => (
                                             <div key={category}>
                                                 <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
@@ -346,7 +456,7 @@ const Events = () => {
                                         )}
 
                                         <a
-                                            href="https://docs.google.com/forms/d/1uVXQ8OrqTb2NiLTs8TKddSBBWQ3hhzsbGh1hUJIRwPQ/viewform"
+                                            href="https://docs.google.com/forms/d/e/1FAIpQLSdA9IrRGBZuqQe8oioE-fbSp9CK9H4hYyGi_2HjGw0d2VenEA/viewform?usp=header"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="block w-full py-4 text-center bg-neon-blue hover:bg-white text-black font-bold font-orbitron rounded-xl hover:shadow-[0_0_30px_rgba(0,243,255,0.4)] transition-all transform hover:-translate-y-1 mt-8 uppercase tracking-widest"

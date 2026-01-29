@@ -53,7 +53,7 @@ const Hero = () => {
                 <img
                     src="/robo.png"
                     alt="Robot"
-                    className="w-full h-full object-contain object-left-bottom transform -translate-x-10"
+                    className="w-full h-full object-contain object-left-bottom transform translate-x-10 translate-y-10"
                 />
             </div>
 
@@ -68,20 +68,20 @@ const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="flex items-center justify-center flex-wrap"
                     >
-                        <span className="text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8.5rem] font-orbitron font-black text-white neon-text leading-none tracking-tighter mr-2 sm:mr-4">
+                        <span className="text-[2.5rem] xs:text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8.5rem] font-orbitron font-black text-white neon-text leading-none tracking-tighter mr-2 sm:mr-4">
                             ARIV
                         </span>
 
-                        <div className="relative w-14 h-14 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center mx-1 sm:mx-2">
+                        <div className="relative w-10 h-10 xs:w-14 xs:h-14 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-32 lg:h-32 flex items-center justify-center mx-1 sm:mx-2">
                             <div className="absolute inset-0 bg-neon-blue/20 rounded-full blur-xl animate-pulse"></div>
                             <Bot className="w-full h-full text-white drop-shadow-[0_0_15px_rgba(0,243,255,0.8)]" strokeWidth={1.5} />
                         </div>
 
-                        <span className="text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8.5rem] font-orbitron font-black text-white neon-text leading-none tracking-[0.1em] ml-2 sm:ml-4">
+                        <span className="text-[2.5rem] xs:text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8.5rem] font-orbitron font-black text-white neon-text leading-none tracking-[0.1em] ml-2 sm:ml-4">
                             LI
                         </span>
 
-                        <span className="text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8.5rem] font-orbitron font-black text-white neon-text leading-none tracking-tighter ml-2 sm:ml-4">
+                        <span className="text-[2.5rem] xs:text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[8.5rem] font-orbitron font-black text-white neon-text leading-none tracking-tighter ml-2 sm:ml-4">
                             '26
                         </span>
                     </motion.div>
@@ -173,7 +173,9 @@ const Hero = () => {
                     className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto"
                 >
                     <a
-                        href="#register"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSdA9IrRGBZuqQe8oioE-fbSp9CK9H4hYyGi_2HjGw0d2VenEA/viewform?usp=header"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="group relative px-8 py-4 bg-neon-blue text-black font-bold font-orbitron rounded-xl overflow-hidden shadow-[0_0_20px_rgba(0,243,255,0.4)] transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(0,243,255,0.6)]"
                     >
                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>

@@ -49,7 +49,7 @@ const Registration = () => {
                     <div className="glass-card p-8 text-center border-neon-blue/30 relative">
                         <h4 className="text-lg font-bold font-orbitron text-white mb-6">Scan to Pay via UPI</h4>
                         <div className="bg-white p-4 rounded-xl inline-block mb-6 shadow-[0_0_20px_rgba(0,243,255,0.2)]">
-                            <QrCode className="w-48 h-48 text-black" />
+                            <QrCode className="w-32 h-32 xs:w-40 xs:h-40 sm:w-48 sm:h-48 text-black" />
                         </div>
                         <p className="text-sm text-gray-300 font-bold mb-1">Merchant Name: Knowledge Institute</p>
                         <p className="text-xs text-gray-500 font-inter">UPI ID: kiot@upi</p>
@@ -95,7 +95,7 @@ const Registration = () => {
                     </div>
 
                     <a
-                        href="https://docs.google.com/forms/d/1uVXQ8OrqTb2NiLTs8TKddSBBWQ3hhzsbGh1hUJIRwPQ/viewform"
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSdA9IrRGBZuqQe8oioE-fbSp9CK9H4hYyGi_2HjGw0d2VenEA/viewform?usp=header"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block w-full py-4 text-center bg-gradient-to-r from-neon-blue to-neon-purple text-white font-bold font-orbitron rounded-xl hover:shadow-[0_0_30px_rgba(188,19,254,0.6)] transition-all transform hover:-translate-y-1 relative overflow-hidden group"
