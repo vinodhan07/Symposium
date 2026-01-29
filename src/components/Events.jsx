@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Code2, Terminal, PenTool, Database, Cpu, Gamepad2, Mic2, Zap, Award, Puzzle, X, CheckCircle, User, Phone, Brain, CircuitBoard, Trophy, Layers, FileText } from 'lucide-react';
 import SectionWrapper from './SectionWrapper';
@@ -355,147 +356,162 @@ const Events = () => {
 
             {/* Event Details Modal */}
             <AnimatePresence>
-                {selectedEvent && (
-                    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6">
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            onClick={() => setSelectedEvent(null)}
-                            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-                        ></motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9, y: 50 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.9, y: 50 }}
-                            className="bg-bg-dark border border-neon-blue/30 rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden relative z-10 shadow-[0_0_50px_rgba(0,243,255,0.15)] flex flex-col md:flex-row"
-                        >
-                            <button
-                                onClick={() => setSelectedEvent(null)}
-                                className="absolute top-4 right-4 p-2 bg-black/50 rounded-full text-gray-400 hover:text-white hover:bg-red-500/20 transition-all z-50"
-                            >
-                                <X size={24} />
-                            </button>
-
-                            {/* Image/Icon Section */}
-                            <div className="w-full md:w-2/5 relative h-48 md:h-auto bg-black flex items-center justify-center overflow-hidden">
-                                {selectedEvent.details?.image ? (
-                                    <div className="w-full h-full relative">
-                                        <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-transparent z-10"></div>
-                                        <img
-                                            src={selectedEvent.details.image}
-                                            alt={selectedEvent.title}
-                                            className="w-full h-full object-cover opacity-80"
-                                        />
-                                    </div>
-                                ) : (
-                                    <div className="w-full h-full relative overflow-hidden flex items-center justify-center bg-grid-pattern">
-                                        <div className="absolute inset-0 bg-neon-blue/5"></div>
-                                        <selectedEvent.icon size={120} className="text-neon-blue opacity-20 animate-pulse" />
-                                    </div>
-                                )}
-                            </div>
-
-                            {/* Content Section */}
-                            <div className="w-full md:w-3/5 p-6 md:p-10 overflow-y-auto custom-scrollbar bg-bg-dark">
-                                <h3 className="text-3xl md:text-4xl font-bold font-orbitron text-white mb-2">{selectedEvent.title}</h3>
-                                <p className="text-neon-blue font-orbitron text-sm mb-8 uppercase tracking-wider font-bold">{selectedEvent.desc}</p>
-
-                                {selectedEvent.details ? (
-                                    <div className="space-y-8">
-                                        <div>
-                                            <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
-                                                <Zap size={18} className="text-yellow-400" /> Description
-                                            </h4>
-                                            <p className="text-gray-300 text-sm leading-relaxed font-inter">
-                                                {selectedEvent.details.description}
-                                            </p>
-                                        </div>
-
-                                        {selectedEvent.details.resourcePerson && (
-                                            <div>
-                                                <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
-                                                    <User size={18} className="text-neon-blue" /> Resource Person
-                                                </h4>
-                                                <div className="bg-white/5 p-4 rounded-xl border border-white/5 hover:border-neon-blue/30 transition-all group/rp">
-                                                    <p className="text-white font-bold font-orbitron">{selectedEvent.details.resourcePerson.split(',')[0].trim()}</p>
-                                                    <p className="text-gray-400 text-xs mt-1 font-inter">{selectedEvent.details.resourcePerson.split(',').slice(1).join(',').trim()}</p>
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        {selectedEvent.details.rules && Object.entries(selectedEvent.details.rules).map(([category, items]) => (
-                                            <div key={category}>
-                                                <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
-                                                    <CheckCircle size={18} className="text-neon-green" /> {category}
-                                                </h4>
-                                                <ul className="space-y-2">
-                                                    {items.map((rule, idx) => (
-                                                        <li key={idx} className="flex gap-3 text-sm text-gray-400 font-inter">
-                                                            <span className="text-neon-blue mt-1.5 w-1.5 h-1.5 rounded-full bg-neon-blue flex-shrink-0"></span>
-                                                            <span>{rule}</span>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        ))}
-
-                                        {selectedEvent.details.coordinators && (
-                                            <div>
-                                                <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
-                                                    <User size={18} className="text-neon-purple" /> Event Coordinators
-                                                </h4>
-                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                                    {selectedEvent.details.coordinators.map((coord, idx) => (
-                                                        <div key={idx} className="bg-white/5 p-4 rounded-xl flex items-center gap-4 border border-white/5 hover:border-white/20 transition-all">
-                                                            <div className="w-10 h-10 rounded-full bg-neon-purple/20 flex items-center justify-center text-neon-purple">
-                                                                <Phone size={18} />
-                                                            </div>
-                                                            <div>
-                                                                <p className="text-white font-bold text-sm">{coord.name}</p>
-                                                                <a href={`tel:${coord.phone}`} className="text-gray-400 text-xs hover:text-white transition-colors">{coord.phone}</a>
-                                                            </div>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-                                            <a
-                                                href="/arivoli2k26.pdf"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center justify-center gap-2 w-full py-4 text-center bg-white/5 border-2 border-neon-purple hover:bg-neon-purple/10 text-neon-purple font-bold font-orbitron rounded-xl hover:shadow-[0_0_30px_rgba(188,19,254,0.3)] transition-all transform hover:-translate-y-1 uppercase tracking-widest"
-                                            >
-                                                <FileText size={20} />
-                                                Open Rule Book
-                                            </a>
-                                            <a
-                                                href="https://docs.google.com/forms/d/e/1FAIpQLSdA9IrRGBZuqQe8oioE-fbSp9CK9H4hYyGi_2HjGw0d2VenEA/viewform?usp=header"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="w-full py-4 text-center bg-neon-blue hover:bg-white text-black font-bold font-orbitron rounded-xl hover:shadow-[0_0_30px_rgba(0,243,255,0.4)] transition-all transform hover:-translate-y-1 uppercase tracking-widest"
-                                            >
-                                                Register for Event
-                                            </a>
-                                        </div>
-                                    </div>
-                                ) : (
-                                    <div className="text-center py-12 border border-dashed border-white/20 rounded-xl">
-                                        <p className="text-gray-500 italic mb-4">Detailed information for this event will be updated soon.</p>
-                                        <button className="px-6 py-2 border border-neon-blue text-neon-blue rounded-full hover:bg-neon-blue hover:text-black transition-colors font-bold font-orbitron text-sm">
-                                            Notify Me
-                                        </button>
-                                    </div>
-                                )}
-                            </div>
-                        </motion.div>
-                    </div>
-                )}
+                {selectedEvent && <EventModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />}
             </AnimatePresence>
         </SectionWrapper>
+    );
+};
+
+const EventModal = ({ event, onClose }) => {
+    React.useEffect(() => {
+        // Disable scrolling when modal is open
+        document.body.style.overflow = 'hidden';
+        return () => {
+            // Re-enable scrolling when modal is closed
+            document.body.style.overflow = 'unset';
+        };
+    }, []);
+
+    // Use ReactDOM.createPortal to render the modal outside the current DOM hierarchy (in document.body)
+    return ReactDOM.createPortal(
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6">
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={onClose}
+                className="absolute inset-0 bg-black/95 backdrop-blur-md"
+            ></motion.div>
+
+            <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 50 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 50 }}
+                className="bg-bg-dark border border-neon-blue/30 rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden relative z-10 shadow-[0_0_50px_rgba(0,243,255,0.15)] flex flex-col md:flex-row"
+            >
+                <button
+                    onClick={onClose}
+                    className="absolute top-4 right-4 p-2 bg-black/50 rounded-full text-gray-400 hover:text-white hover:bg-red-500/20 transition-all z-50"
+                >
+                    <X size={24} />
+                </button>
+
+                {/* Image/Icon Section */}
+                <div className="w-full md:w-2/5 relative h-48 md:h-auto bg-black flex items-center justify-center overflow-hidden">
+                    {event.details?.image ? (
+                        <div className="w-full h-full relative">
+                            <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-transparent z-10"></div>
+                            <img
+                                src={event.details.image}
+                                alt={event.title}
+                                className="w-full h-full object-cover opacity-80"
+                            />
+                        </div>
+                    ) : (
+                        <div className="w-full h-full relative overflow-hidden flex items-center justify-center bg-grid-pattern">
+                            <div className="absolute inset-0 bg-neon-blue/5"></div>
+                            <event.icon size={120} className="text-neon-blue opacity-20 animate-pulse" />
+                        </div>
+                    )}
+                </div>
+
+                {/* Content Section */}
+                <div className="w-full md:w-3/5 p-6 md:p-10 overflow-y-auto custom-scrollbar bg-bg-dark">
+                    <h3 className="text-3xl md:text-4xl font-bold font-orbitron text-white mb-2">{event.title}</h3>
+                    <p className="text-neon-blue font-orbitron text-sm mb-8 uppercase tracking-wider font-bold">{event.desc}</p>
+
+                    {event.details ? (
+                        <div className="space-y-8">
+                            <div>
+                                <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
+                                    <Zap size={18} className="text-yellow-400" /> Description
+                                </h4>
+                                <p className="text-gray-300 text-sm leading-relaxed font-inter">
+                                    {event.details.description}
+                                </p>
+                            </div>
+
+                            {event.details.resourcePerson && (
+                                <div>
+                                    <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
+                                        <User size={18} className="text-neon-blue" /> Resource Person
+                                    </h4>
+                                    <div className="bg-white/5 p-4 rounded-xl border border-white/5 hover:border-neon-blue/30 transition-all group/rp">
+                                        <p className="text-white font-bold font-orbitron">{event.details.resourcePerson.split(',')[0].trim()}</p>
+                                        <p className="text-gray-400 text-xs mt-1 font-inter">{event.details.resourcePerson.split(',').slice(1).join(',').trim()}</p>
+                                    </div>
+                                </div>
+                            )}
+
+                            {event.details.rules && Object.entries(event.details.rules).map(([category, items]) => (
+                                <div key={category}>
+                                    <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
+                                        <CheckCircle size={18} className="text-neon-green" /> {category}
+                                    </h4>
+                                    <ul className="space-y-2">
+                                        {items.map((rule, idx) => (
+                                            <li key={idx} className="flex gap-3 text-sm text-gray-400 font-inter">
+                                                <span className="text-neon-blue mt-1.5 w-1.5 h-1.5 rounded-full bg-neon-blue flex-shrink-0"></span>
+                                                <span>{rule}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+
+                            {event.details.coordinators && (
+                                <div>
+                                    <h4 className="text-lg font-bold font-orbitron text-white mb-3 flex items-center gap-2 border-b border-white/10 pb-2">
+                                        <User size={18} className="text-neon-purple" /> Event Coordinators
+                                    </h4>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        {event.details.coordinators.map((coord, idx) => (
+                                            <div key={idx} className="bg-white/5 p-4 rounded-xl flex items-center gap-4 border border-white/5 hover:border-white/20 transition-all">
+                                                <div className="w-10 h-10 rounded-full bg-neon-purple/20 flex items-center justify-center text-neon-purple">
+                                                    <Phone size={18} />
+                                                </div>
+                                                <div>
+                                                    <p className="text-white font-bold text-sm">{coord.name}</p>
+                                                    <a href={`tel:${coord.phone}`} className="text-gray-400 text-xs hover:text-white transition-colors">{coord.phone}</a>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                                <a
+                                    href="/arivoli2k26.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center gap-2 w-full py-4 text-center bg-white/5 border-2 border-neon-purple hover:bg-neon-purple/10 text-neon-purple font-bold font-orbitron rounded-xl hover:shadow-[0_0_30px_rgba(188,19,254,0.3)] transition-all transform hover:-translate-y-1 uppercase tracking-widest"
+                                >
+                                    <FileText size={20} />
+                                    Open Rule Book
+                                </a>
+                                <a
+                                    href="https://docs.google.com/forms/d/e/1FAIpQLSdA9IrRGBZuqQe8oioE-fbSp9CK9H4hYyGi_2HjGw0d2VenEA/viewform?usp=header"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full py-4 text-center bg-neon-blue hover:bg-white text-black font-bold font-orbitron rounded-xl hover:shadow-[0_0_30px_rgba(0,243,255,0.4)] transition-all transform hover:-translate-y-1 uppercase tracking-widest"
+                                >
+                                    Register for Event
+                                </a>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="text-center py-12 border border-dashed border-white/20 rounded-xl">
+                            <p className="text-gray-500 italic mb-4">Detailed information for this event will be updated soon.</p>
+                            <button className="px-6 py-2 border border-neon-blue text-neon-blue rounded-full hover:bg-neon-blue hover:text-black transition-colors font-bold font-orbitron text-sm">
+                                Notify Me
+                            </button>
+                        </div>
+                    )}
+                </div>
+            </motion.div>
+        </div>,
+        document.body
     );
 };
 
