@@ -79,7 +79,7 @@ const About = () => {
                                     loading="lazy"
                                     src={item.image}
                                     alt={item.highlight}
-                                    className="w-[70%] h-[70%] object-contain"
+                                    className="w-[90%] h-[90%] object-contain"
                                 />
                             </div>
                             <h4 className="text-base sm:text-xl font-bold font-orbitron text-white text-center pb-0.5">{item.highlight}</h4>
