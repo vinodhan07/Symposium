@@ -107,7 +107,7 @@ const Contact = () => {
                                     name="name"
                                     placeholder="Enter your name"
                                     required
-                                    className="w-full bg-bg-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-blue focus:shadow-[0_0_10px_rgba(0,243,255,0.2)] transition-all font-inter"
+                                    className="w-full bg-bg-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-blue focus:shadow-[0_0_10px_rgba(0,212,255,0.2)] transition-all font-inter"
                                 />
                             </div>
                             <div className="space-y-2">
@@ -117,7 +117,7 @@ const Contact = () => {
                                     name="email"
                                     placeholder="Enter your email"
                                     required
-                                    className="w-full bg-bg-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-blue focus:shadow-[0_0_10px_rgba(0,243,255,0.2)] transition-all font-inter"
+                                    className="w-full bg-bg-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-blue focus:shadow-[0_0_10px_rgba(0,212,255,0.2)] transition-all font-inter"
                                 />
                             </div>
                         </div>
@@ -129,7 +129,7 @@ const Contact = () => {
                                 name="subject"
                                 placeholder="Event Enquiry"
                                 required
-                                className="w-full bg-bg-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-blue focus:shadow-[0_0_10px_rgba(0,243,255,0.2)] transition-all font-inter"
+                                className="w-full bg-bg-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-blue focus:shadow-[0_0_10px_rgba(0,212,255,0.2)] transition-all font-inter"
                             />
                         </div>
 
@@ -140,13 +140,13 @@ const Contact = () => {
                                 name="message"
                                 placeholder="How can we help you?"
                                 required
-                                className="w-full bg-bg-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-blue focus:shadow-[0_0_10px_rgba(0,243,255,0.2)] transition-all font-inter resize-none"
+                                className="w-full bg-bg-dark border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-blue focus:shadow-[0_0_10px_rgba(0,212,255,0.2)] transition-all font-inter resize-none"
                             ></textarea>
                         </div>
 
                         <button
                             type="submit"
-                            className="w-full bg-gradient-to-r from-neon-blue to-neon-purple text-white font-bold font-orbitron py-4 rounded-lg shadow-[0_0_20px_rgba(0,243,255,0.3)] hover:shadow-[0_0_30px_rgba(0,243,255,0.5)] transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group"
+                            className="w-full bg-gradient-to-r from-neon-blue to-neon-purple text-white font-bold font-orbitron py-4 rounded-lg shadow-[0_0_20px_rgba(0,212,255,0.3)] hover:shadow-[0_0_30px_rgba(0,212,255,0.5)] transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2 group"
                         >
                             <Send size={18} className="group-hover:translate-x-1 transition-transform" />
                             SEND MESSAGE

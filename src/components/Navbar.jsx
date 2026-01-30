@@ -28,23 +28,17 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-2 bg-bg-dark/90 backdrop-blur-md border-b border-white/5 shadow-[0_4px_30px_rgba(0,243,255,0.1)]' : 'py-4 bg-transparent'
+            className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-2 bg-bg-dark/90 backdrop-blur-md border-b border-white/5 shadow-[0_4px_30px_rgba(0,212,255,0.1)]' : 'py-4 bg-transparent'
                 }`}
         >
             <div className="max-w-[98%] mx-auto px-2 sm:px-4 lg:px-6">
                 <div className="flex items-center justify-between">
-                    {/* Logo Section */}
-                    <div className="flex-shrink-0 flex items-center cursor-pointer group">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mr-2 sm:mr-3 relative transform group-hover:scale-105 transition-transform duration-300">
-                            <img
-                                src="/kiot-logo.png"
-                                alt="KIOT Logo"
-                                className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
-                            />
-                        </div>
-                        <span className="font-orbitron font-bold text-[8px] xs:text-[10px] sm:text-sm md:text-base tracking-widest text-white group-hover:text-neon-blue transition-colors duration-300 uppercase whitespace-nowrap">
-                            Knowledge Institute Of Technology
-                        </span>
+                    <div className="flex-shrink-0 flex items-center">
+                        <img
+                            src="/kiot-header.png"
+                            alt="Knowledge Institute of Technology"
+                            className="h-10 sm:h-12 md:h-14 w-auto object-contain filter drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+                        />
                     </div>
 
                     {/* Desktop Navigation */}
@@ -54,18 +48,16 @@ const Navbar = () => {
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="relative px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 group overflow-hidden"
+                                    className="relative px-3 py-2 rounded-md text-sm font-medium text-gray-300"
                                 >
                                     <span className="relative z-10">{link.name}</span>
-                                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon-blue transition-all duration-300 group-hover:w-full"></span>
-                                    <span className="absolute inset-0 bg-neon-blue/5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left -z-10 rounded-md"></span>
                                 </a>
                             ))}
                             <a
                                 href="https://docs.google.com/forms/d/e/1FAIpQLSdA9IrRGBZuqQe8oioE-fbSp9CK9H4hYyGi_2HjGw0d2VenEA/viewform?usp=header"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="ml-4 px-6 py-2 bg-transparent border border-neon-blue text-neon-blue hover:bg-neon-blue hover:text-black font-orbitron font-bold rounded-lg transition-all duration-300 shadow-[0_0_10px_rgba(0,243,255,0.2)] hover:shadow-[0_0_20px_rgba(0,243,255,0.6)]"
+                                className="ml-4 px-6 py-2 bg-transparent border border-neon-blue text-neon-blue font-orbitron font-bold rounded-lg transition-all duration-300 shadow-[0_0_10px_rgba(0,212,255,0.2)]"
                             >
                                 REGISTER
                             </a>
@@ -109,7 +101,7 @@ const Navbar = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={() => setIsOpen(false)}
-                                className="block w-full text-center mt-4 px-6 py-3 bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 border border-neon-blue/50 text-white font-orbitron font-bold rounded-lg shadow-[0_0_15px_rgba(0,243,255,0.1)]"
+                                className="block w-full text-center mt-4 px-6 py-3 bg-gradient-to-r from-neon-blue/20 to-neon-purple/20 border border-neon-blue/50 text-white font-orbitron font-bold rounded-lg shadow-[0_0_15px_rgba(0,212,255,0.1)]"
                             >
                                 REGISTER NOW
                             </a>

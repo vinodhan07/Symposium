@@ -35,7 +35,7 @@ const About = () => {
                     </p>
                 </div>
 
-                <div className="glass-card p-8 border-neon-purple/50 relative group hover:border-neon-purple transition-all">
+                <div className="glass-card p-8 border-neon-purple/50 relative group">
                     <h3 className="text-2xl font-bold font-orbitron text-neon-purple mb-4 flex items-center">
                         <Award className="mr-3" /> KIOT
                     </h3>
@@ -46,40 +46,58 @@ const About = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                {[
-                    { image: "/kiot-logo.png", highlight: "Autonomous", sub: "Institution" },
-                    { image: "/naac.jpeg", highlight: "NAAC A", sub: "Accredited" },
-                    { image: "/nba.jpeg", highlight: "NBA", sub: "Approved" },
-                    { image: "/idealab.jpeg", highlight: "AICTE", sub: "Approved" }
-                ].map((item, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                        className="bg-white/5 p-6 rounded-xl border border-white/5 hover:border-neon-blue/50 transition-all hover:transform hover:-translate-y-2 group shadow-lg overflow-hidden relative flex flex-col items-center justify-center min-h-[240px]"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <div className="w-28 h-28 mb-4 relative z-10 flex items-center justify-center transition-colors overflow-hidden">
-                            <img
-                                src={item.image}
-                                alt={item.highlight}
-                                className="w-full h-full object-cover rounded-full filter group-hover:scale-110 transition-transform duration-300"
-                            />
+            {/* Accreditation Marquee Section */}
+            <div className="relative overflow-hidden py-16 mt-10">
+                {/* Visual Fades for a premium look */}
+                <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-48 z-20 bg-gradient-to-r from-bg-dark via-bg-dark/80 to-transparent pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-48 z-20 bg-gradient-to-l from-bg-dark via-bg-dark/80 to-transparent pointer-events-none"></div>
+
+                {/* The Marquee Container */}
+                <div className="flex w-max whitespace-nowrap animate-marquee">
+                    {[
+                        { image: "/NAAC.png", highlight: "NAAC A", sub: "Accredited" },
+                        { image: "/nba-logo.png", highlight: "NBA", sub: "Approved" },
+                        { image: "/idealab.png", highlight: "IDEALAB", sub: "Approved" },
+                        { image: "/istart.png", highlight: "ISTART", sub: "Approved" },
+                        { image: "/IIC.png", highlight: "IIC", sub: "Approved" },
+                        { image: "/ICTA.png", highlight: "ICTACADEMY", sub: "Approved" },
+                        { image: "/iste-logo.png", highlight: "ISTE", sub: "Approved" },
+                        { image: "/IEEE.png", highlight: "IEEE", sub: "Approved" }
+                    ].concat([
+                        { image: "/NAAC.png", highlight: "NAAC A", sub: "Accredited" },
+                        { image: "/nba-logo.png", highlight: "NBA", sub: "Approved" },
+                        { image: "/idealab.png", highlight: "IDEALAB", sub: "Approved" },
+                        { image: "/istart.png", highlight: "ISTART", sub: "Approved" },
+                        { image: "/IIC.png", highlight: "IIC", sub: "Approved" },
+                        { image: "/ICTA.png", highlight: "ICTACADEMY", sub: "Approved" },
+                        { image: "/iste-logo.png", highlight: "ISTE", sub: "Approved" },
+                        { image: "/IEEE.png", highlight: "IEEE", sub: "Approved" }
+                    ]).map((item, index) => (
+                        <div
+                            key={index}
+                            className="inline-flex flex-col items-center justify-center w-[200px] sm:w-[280px] px-2 sm:px-4 flex-shrink-0"
+                        >
+                            <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white border-4 border-[#00d4ff] rounded-full mb-4 relative z-10 flex items-center justify-center overflow-hidden shadow-[0_4px_15px_rgba(0,212,255,0.3)]">
+                                <img
+                                    loading="lazy"
+                                    src={item.image}
+                                    alt={item.highlight}
+                                    className="w-[70%] h-[70%] object-contain"
+                                />
+                            </div>
+                            <h4 className="text-base sm:text-xl font-bold font-orbitron text-white text-center pb-0.5">{item.highlight}</h4>
+                            <p className="text-gray-400 text-[10px] sm:text-sm font-inter text-center font-medium leading-tight">{item.sub}</p>
                         </div>
-                        <h4 className="text-xl font-bold font-orbitron text-white relative z-10">{item.highlight}</h4>
-                        <p className="text-gray-400 text-sm font-inter mt-1 relative z-10">{item.sub}</p>
-                    </motion.div>
-                ))}
+                    ))}
+                </div>
             </div>
 
             <div className="mt-20 text-center">
                 <a
                     href="mailto:arivoli2k26@kiot.ac.in"
-                    className="inline-flex items-center gap-3 text-neon-blue font-orbitron text-lg sm:text-xl font-bold hover:text-white transition-colors duration-300 group"
+                    className="inline-flex items-center gap-3 text-neon-blue font-orbitron text-lg sm:text-xl font-bold transition-colors duration-300"
                 >
-                    <Mail className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                    <Mail className="w-6 h-6" />
                     arivoli2k26@kiot.ac.in
                 </a>
             </div>

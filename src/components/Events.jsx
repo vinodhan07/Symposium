@@ -322,7 +322,7 @@ const Events = () => {
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id)}
                         className={`px-6 py-3 rounded-full font-orbitron font-bold transition-all flex items-center gap-2 ${activeTab === tab.id
-                            ? 'bg-neon-blue text-black shadow-[0_0_20px_rgba(0,243,255,0.4)] transform scale-105'
+                            ? 'bg-neon-blue text-black shadow-[0_0_20px_rgba(0,212,255,0.4)] transform scale-105'
                             : 'bg-white/5 text-gray-400 hover:text-white border border-white/10 hover:border-neon-blue/50'
                             }`}
                     >
@@ -393,7 +393,7 @@ const EventModal = ({ event, onClose }) => {
                 initial={{ opacity: 0, scale: 0.9, y: 50 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 50 }}
-                className="bg-bg-dark border border-neon-blue/30 rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden relative z-10 shadow-[0_0_50px_rgba(0,243,255,0.15)] flex flex-col md:flex-row"
+                className="bg-bg-dark border border-neon-blue/30 rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden relative z-10 shadow-[0_0_50px_rgba(0,212,255,0.15)] flex flex-col md:flex-row"
             >
                 <button
                     onClick={onClose}
@@ -408,6 +408,7 @@ const EventModal = ({ event, onClose }) => {
                         <div className="w-full h-full relative">
                             <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-transparent to-transparent z-10"></div>
                             <img
+                                loading="lazy"
                                 src={event.details.image}
                                 alt={event.title}
                                 className="w-full h-full object-cover opacity-80"
@@ -500,7 +501,7 @@ const EventModal = ({ event, onClose }) => {
                                     href="https://docs.google.com/forms/d/e/1FAIpQLSdA9IrRGBZuqQe8oioE-fbSp9CK9H4hYyGi_2HjGw0d2VenEA/viewform?usp=header"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full py-4 text-center bg-neon-blue hover:bg-white text-black font-bold font-orbitron rounded-xl hover:shadow-[0_0_30px_rgba(0,243,255,0.4)] transition-all transform hover:-translate-y-1 uppercase tracking-widest"
+                                    className="w-full py-4 text-center bg-neon-blue hover:bg-white text-black font-bold font-orbitron rounded-xl hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] transition-all transform hover:-translate-y-1 uppercase tracking-widest"
                                 >
                                     Register for Event
                                 </a>

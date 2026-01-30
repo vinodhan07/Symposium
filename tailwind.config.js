@@ -11,19 +11,21 @@ export default {
             },
             colors: {
                 neon: {
-                    blue: '#00f3ff',
-                    purple: '#bc13fe',
+                    blue: '#00d4ff',
+                    purple: '#4a90d9',
                     pink: '#ff00ff',
-                    green: '#0aff00'
+                    green: '#0aff00',
+                    gold: '#ffd700',
+                    coral: '#ff6b6b'
                 },
                 bg: {
-                    dark: '#050510',
+                    dark: '#0a1628',
                     card: 'rgba(255, 255, 255, 0.05)',
-                    overlay: 'rgba(5, 5, 16, 0.8)'
+                    overlay: 'rgba(10, 22, 40, 0.8)'
                 },
                 accent: {
-                    DEFAULT: '#bc13fe',
-                    hover: '#d946ef'
+                    DEFAULT: '#00d4ff',
+                    hover: '#4dd9ff'
                 }
             },
             fontFamily: {
@@ -36,6 +38,8 @@ export default {
                 'float': 'float 6s ease-in-out infinite',
                 'glow': 'glow 2s ease-in-out infinite alternate',
                 'progress': 'progress 2s ease-in-out infinite',
+                'marquee': 'marquee 15s linear infinite',
+                'scroll-left-180': 'scroll-left-180 10s linear infinite',
             },
             keyframes: {
                 float: {
@@ -43,13 +47,21 @@ export default {
                     '50%': { transform: 'translateY(-20px)' },
                 },
                 glow: {
-                    'from': { boxShadow: '0 0 10px #00f3ff, 0 0 20px #00f3ff' },
-                    'to': { boxShadow: '0 0 20px #00f3ff, 0 0 30px #00f3ff' }
+                    'from': { boxShadow: '0 0 10px #00d4ff, 0 0 20px #00d4ff' },
+                    'to': { boxShadow: '0 0 20px #00d4ff, 0 0 30px #00d4ff' }
                 },
                 progress: {
                     '0%': { transform: 'translateX(-100%)' },
                     '100%': { transform: 'translateX(100%)' }
-                }
+                },
+                marquee: {
+                    '0%': { transform: 'translateX(-50%)' },
+                    '100%': { transform: 'translateX(0)' }
+                },
+                'scroll-left-180': {
+                    '0%': { transform: 'translateX(0)' },
+                    '100%': { transform: 'translateX(-180px)' },
+                },
             }
         },
     },

@@ -26,7 +26,7 @@ const Footer = () => {
                                 href="https://www.linkedin.com/school/infokiot/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-neon-blue hover:bg-white/10 transition-all duration-300 border border-transparent hover:border-neon-blue/30 shadow-sm hover:shadow-[0_0_10px_rgba(0,243,255,0.2)]"
+                                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:text-neon-blue hover:bg-white/10 transition-all duration-300 border border-transparent hover:border-neon-blue/30 shadow-sm hover:shadow-[0_0_10px_rgba(0,212,255,0.2)]"
                             >
                                 <Linkedin size={18} />
                             </a>
