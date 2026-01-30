@@ -9,7 +9,7 @@ const Schedule = () => {
   { time: '11:00 AM', event: 'Technical Events & Workshops', description: 'Project Expo, Paper Presentation, Coding, and AI sessions' },
   { time: '01:00 PM', event: 'Lunch Session', description: 'Participants enjoyed a wonderful lunch at KIOT.' },
   { time: '02:00 PM', event: 'Non-Technical Events', description: 'Fun challenges, gaming, and creative activities' },
-  { time: '04:45 PM', event: 'Valedictory & Conclusion', description: 'Closing ceremony and vote of thanks' }
+  { time: '04:00 PM', event: 'Valedictory & Conclusion', description: 'Closing ceremony and vote of thanks' }
     ];
 
     return (
