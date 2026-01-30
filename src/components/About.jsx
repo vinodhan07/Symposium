@@ -49,8 +49,6 @@ const About = () => {
             {/* Accreditation Marquee Section */}
             <div className="relative overflow-hidden py-16 mt-10">
                 {/* Visual Fades for a premium look */}
-                <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-48 z-20 bg-gradient-to-r from-bg-dark via-bg-dark/80 to-transparent pointer-events-none"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-48 z-20 bg-gradient-to-l from-bg-dark via-bg-dark/80 to-transparent pointer-events-none"></div>
 
                 {/* The Marquee Container */}
                 <div className="flex w-max whitespace-nowrap animate-marquee">

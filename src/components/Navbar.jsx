@@ -3,8 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Cpu } from 'lucide-react';
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
+    const [activeLink, setActiveLink] = useState('Home');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -12,16 +11,29 @@ const Navbar = () => {
             if (isScrolled !== scrolled) {
                 setScrolled(isScrolled);
             }
+
+            // Active link detection
+            const sections = navLinks.map(link => link.name);
+            for (const section of sections) {
+                const element = document.getElementById(section.toLowerCase());
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= 100 && rect.bottom >= 100) {
+                        setActiveLink(section);
+                        break;
+                    }
+                }
+            }
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [scrolled]);
+    }, [scrolled]); // Removed activeLink from dependency array to avoid unnecessary re-renders
 
     const navLinks = [
         { name: 'Home', href: '#' },
         { name: 'Events', href: '#events' },
-        { name: 'Schedule', href: '#schedule' }, // Added Schedule
+        { name: 'Schedule', href: '#schedule' },
         { name: 'About', href: '#about' },
         { name: 'Contact', href: '#contact' },
     ];
@@ -48,16 +60,28 @@ const Navbar = () => {
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="relative px-3 py-2 rounded-md text-sm font-medium text-gray-300"
+                                    className={`relative px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${activeLink === link.name
+                                        ? 'text-neon-blue drop-shadow-[0_0_5px_rgba(0,212,255,0.5)]'
+                                        : 'text-gray-300 hover:text-white hover:drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]'
+                                        }`}
                                 >
                                     <span className="relative z-10">{link.name}</span>
+                                    {activeLink === link.name && (
+                                        <motion.div
+                                            layoutId="active-nav"
+                                            className="absolute bottom-0 left-0 w-full h-0.5 bg-neon-blue shadow-[0_0_10px_#00d4ff]"
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ duration: 0.3 }}
+                                        />
+                                    )}
                                 </a>
                             ))}
                             <a
                                 href="https://docs.google.com/forms/d/e/1FAIpQLSdA9IrRGBZuqQe8oioE-fbSp9CK9H4hYyGi_2HjGw0d2VenEA/viewform?usp=header"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="ml-4 px-6 py-2 bg-transparent border border-neon-blue text-neon-blue font-orbitron font-bold rounded-lg transition-all duration-300 shadow-[0_0_10px_rgba(0,212,255,0.2)]"
+                                className="ml-4 px-6 py-2 bg-transparent border border-neon-blue text-neon-blue font-orbitron font-bold rounded-lg transition-all duration-300 shadow-[0_0_10px_rgba(0,212,255,0.2)] hover:bg-neon-blue/10 hover:shadow-[0_0_20px_rgba(0,212,255,0.4)]"
                             >
                                 REGISTER
                             </a>
