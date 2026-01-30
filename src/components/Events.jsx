@@ -173,7 +173,9 @@ const Events = () => {
                         { name: "Rajvenkadam S", phone: "96297 98166" },
                         { name: "Tamil Selvan", phone: "80564 67991" },
                         { name: "Preethi S", phone: "63817 28415" },
-                        { name: "Yuvasri.G", phone: "99522 48022" }
+                        { name: "Yuvasri.G", phone: "99522 48022" },
+                        { name: "Naveen K", phone: "8428603024" },
+                        { name: "Miruthula", phone: "90952 94181" }
                     ]
                 }
             },
@@ -251,7 +253,7 @@ const Events = () => {
                         { name: "Anitha S", phone: "75503 71716" },
                         { name: "Kamaraj D", phone: "96290 84306" },
                         { name: "Surya Karthikeyan V S", phone: "90436 47016" },
-                        { name: "Miruthula", phone: "90952 94181" }
+                        { name: "Sivamithra", phone: "98942 84848" }
                     ]
                 }
             },
@@ -498,10 +500,9 @@ const EventModal = ({ event, onClose }) => {
                                     Open Rule Book
                                 </a>
                                 <a
-                                    href="https://docs.google.com/forms/d/e/1FAIpQLSdA9IrRGBZuqQe8oioE-fbSp9CK9H4hYyGi_2HjGw0d2VenEA/viewform?usp=header"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full py-4 text-center bg-neon-blue hover:bg-white text-black font-bold font-orbitron rounded-xl hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] transition-all transform hover:-translate-y-1 uppercase tracking-widest"
+                                    href="#register"
+                                    onClick={onClose}
+                                    className="w-full py-4 text-center bg-neon-blue hover:bg-white text-black font-bold font-orbitron rounded-xl hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] transition-all transform hover:-translate-y-1 uppercase tracking-widest cursor-pointer"
                                 >
                                     Register for Event
                                 </a>

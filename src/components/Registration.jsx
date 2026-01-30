@@ -49,10 +49,14 @@ const Registration = () => {
                     <div className="glass-card p-8 text-center border-neon-blue/30 relative">
                         <h4 className="text-lg font-bold font-orbitron text-white mb-6">Scan to Pay via UPI</h4>
                         <div className="bg-white p-4 rounded-xl inline-block mb-6 shadow-[0_0_20px_rgba(0,212,255,0.2)]">
-                            <QrCode className="w-32 h-32 xs:w-40 xs:h-40 sm:w-48 sm:h-48 text-black" />
+                            <img
+                                src="/registration_qr.jpg"
+                                alt="Registration Payment QR"
+                                className="w-32 h-32 xs:w-40 xs:h-40 sm:w-48 sm:h-48 object-contain"
+                            />
                         </div>
-                        <p className="text-sm text-gray-300 font-bold mb-1">Merchant Name: Knowledge Institute</p>
-                        <p className="text-xs text-gray-500 font-inter">UPI ID: kiot@upi</p>
+                        <p className="text-sm text-gray-300 font-bold mb-1">M/S. KNOWLEDGE INSTITUTE OF TECHNOLOGY - THE PRINCIPAL</p>
+                        <p className="text-xs text-gray-500 font-inter">Mobile: 97900 18181</p>
                     </div>
                 </motion.div>
 
