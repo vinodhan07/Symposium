@@ -49,21 +49,7 @@ const Hero = () => {
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center pt-12 md:pt-16 overflow-hidden">
             {/* Robot Image - Background */}
-            <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 0.95, scale: 1 }}
-                transition={{ duration: 1.5, delay: 0.5 }}
-                className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-0 pointer-events-none"
-            >
-                <motion.img
-                    src="/robot-hero.png"
-                    alt=""
-                    className="w-[400px] md:w-[500px] lg:w-[600px] xl:w-[700px] h-auto object-contain"
-                    animate={{ y: [0, -30, 0] }}
-                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                    style={{ filter: 'drop-shadow(0 0 60px rgba(0,212,255,0.4))' }}
-                />
-            </motion.div>
+
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
 

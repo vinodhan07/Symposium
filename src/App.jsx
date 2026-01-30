@@ -19,7 +19,7 @@ const LoadingPlaceholder = () => (
 
 function App() {
     return (
-        <div className="min-h-screen text-white overflow-hidden relative selection:bg-neon-blue selection:text-black">
+        <div className="min-h-screen text-white overflow-hidden overflow-x-hidden relative selection:bg-neon-blue selection:text-black">
             {/* Global Background Elements */}
             <div className="bg pointer-events-none opacity-60"></div>
             <div className="star-field pointer-events-none">

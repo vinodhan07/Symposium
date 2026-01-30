@@ -45,7 +45,7 @@ const Navbar = () => {
             className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-2 bg-bg-dark/90 backdrop-blur-md border-b border-white/5 shadow-[0_4px_30px_rgba(0,212,255,0.1)]' : 'py-4 bg-transparent'
                 }`}
         >
-            <div className="max-w-[98%] mx-auto px-2 sm:px-4 lg:px-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between">
                     <div className="flex-shrink-0 flex items-center">
                         <img

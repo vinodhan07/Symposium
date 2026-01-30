@@ -46,7 +46,7 @@ const About = () => {
             </div>
 
             {/* Accreditation Marquee Section */}
-            <div className="relative overflow-hidden py-6 mt-10 -ml-[50vw] left-1/2 w-screen">
+            <div className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden py-10">
                 {/* Visual Fades for a premium look */}
 
                 {/* The Marquee Container */}
